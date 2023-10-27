@@ -1,0 +1,70 @@
+:root {
+	--navbarHeight: 8vh;
+	--burgerBoxHeight: 23px;
+	--txtColor: #fff;
+	--txtMenuHover: orangered;
+	--backgroundColor1: #333;
+	--backgroundColor2: #777;
+	--backgroundColorShadow: #aaa;
+}
+
+* {
+	margin: 0;
+	border: 0;
+	padding: 0;
+}
+
+header {
+	height: 100vh;
+	width: 100%;
+}
+
+.videoShadowLayer {
+	background: linear-gradient(to bottom, #00000000, #000000ff);
+	height: calc(100vh - var(--navbarHeight));
+	width: 100%;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: var(--navbarHeight);
+	bottom: 0;
+}
+
+#backgroundVideo {
+	height: calc(100vh - var(--navbarHeight));
+	width: 100%;
+	object-fit: cover;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: var(--navbarHeight);
+	bottom: 0;
+	z-index: -1;
+}
+
+h1, #mainSubtitle {
+	display: block;
+	position: relative;
+	text-align: center;
+}
+
+h1 {
+	color: var(--txtColor);
+	top: 75vh;
+}
+
+@media screen and (max-width: 414px) {
+	#mainSubtitle {
+		display: none;
+	}	
+}
+
+@media screen and (min-width: 415px) {
+	#mainSubtitle {
+		color: #bbb;
+		letter-spacing: min(5px, 0.5em);
+		top: 70vh;
+	}
+}
+
+

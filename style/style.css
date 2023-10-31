@@ -1,11 +1,13 @@
 :root {
-	--navbarHeight: 8vh;
-	--burgerBoxHeight: 23px;
+	--navbarHeight: max(8vh, 45px);
+	--burgerBoxSize: 30px;
 	--txtColor: #fff;
-	--txtMenuHover: orangered;
+	--txtOrange: orangered;
+	--txtSubtitleColor: #bbb;
 	--backgroundColor1: #333;
 	--backgroundColor2: #777;
 	--backgroundColorShadow: #aaa;
+	--socialMediaSize: 50px;
 }
 
 * {
@@ -42,29 +44,163 @@ header {
 	z-index: -1;
 }
 
-h1, #mainSubtitle {
+h1, #mainSubtitle, #secondSubtitle {
 	display: block;
 	position: relative;
 	text-align: center;
 }
 
+#mainSubtitle {
+	color: var(--txtSubtitleColor);
+}
+
 h1 {
 	color: var(--txtColor);
-	top: 75vh;
 }
 
-@media screen and (max-width: 414px) {
-	#mainSubtitle {
-		display: none;
-	}	
+#secondSubtitle {
+	color: var(--txtOrange);
 }
 
-@media screen and (min-width: 415px) {
+.mainContainer {
+	padding: 40px 0;
+	background: var(--backgroundColor1);
+}
+
+.section {
+	padding: 30px 15px;
+}
+
+.section:first-of-type {
+	padding-top: 0;
+	padding-bottom: 30px;
+}
+
+.section:last-of-type {
+	padding-top: 30px;
+	padding-bottom: 0px;
+}
+
+.socialMediaList {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	max-width: 450px;
+	margin: 0 auto;
+}
+
+.socialMediaItem {
+	display: block;
+	background: var(--backgroundColor2);
+	width: var(--socialMediaSize);
+	height: var(--socialMediaSize);
+	border-radius: 100%;
+	transition: background 0.5s ease-in-out;
+}
+
+.socialMediaItem:hover {
+	background: var(--txtOrange);
+	cursor: pointer;
+}
+
+.socialMediaItem img {
+	display: block;
+	width: calc(var(--socialMediaSize) / 2);
+	height: calc(var(--socialMediaSize) / 2);
+	position: relative;
+	top: calc(var(--socialMediaSize) / 4);
+	left: calc(var(--socialMediaSize) / 4);
+}
+
+.orangeTxt {
+	color: var(--txtOrange);
+}
+
+.sectionTitle {
+	margin-bottom: 10px;
+	color: var(--txtColor);
+}
+
+.block {
+	background: var(--backgroundColor2);
+	padding: 10px;
+	color: var(--txtColor);
+}
+
+.block p:first-child {
+	margin-bottom: 5px;
+}
+
+.block p {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.block p:last-child {
+	margin-top: 5px;
+}
+
+#memberList {
+	list-style-type: none;
+}
+
+.sectionHR {
+	border-top: 1px solid var(--backgroundColor2);
+}
+
+@media screen and (max-width: 489px) {
 	#mainSubtitle {
-		color: #bbb;
-		letter-spacing: min(5px, 0.5em);
 		top: 70vh;
+		font-size: 0.6em;
+	}
+
+	h1 {
+		top: 75vh;
+		font-size: 2em;
+	}
+
+	#secondSubtitle {
+		top: 80vh;
+		font-size: 1.3em;
 	}
 }
 
+@media screen and (min-width: 490px) and (max-width: 799px) {
+	#mainSubtitle {
+		top: 70vh;
+		font-size: 1em;
+	}
 
+	h1 {
+		top: 75vh;
+		font-size: 2.5em;
+	}
+
+	#secondSubtitle {
+		top: 80vh;
+		font-size: 1.5em;
+	}
+
+	:root {
+		--socialMediaSize: 60px;
+	}
+}
+
+@media screen and (min-width: 800px) {
+	#mainSubtitle {
+		top: 60vh;
+		font-size: 1.2em;
+	}
+
+	h1 {
+		top: 65vh;
+		font-size: 3em;
+		font-weight: 700;
+	}
+
+	#secondSubtitle {
+		top: 70vh;
+		font-size: 1.7em;
+		font-weight: 500;
+	}
+}

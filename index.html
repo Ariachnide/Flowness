@@ -7,6 +7,7 @@
         <title>Flowness</title>
         <link rel="stylesheet" href="style/style.css" />
         <link rel="stylesheet" href="style/sideMenu.css" />
+        <link rel="stylesheet" href="style/carousel.css" />
         <link rel="icon" type="image/x-icon" href="./ressources/ico.png" />
     </head>
 
@@ -36,6 +37,7 @@
             <p id="secondSubtitle">Modern Soul Groovy Sound</p>
         </header>
         <div class="mainContainer">
+
             <div class="section">
                 <div class="socialMediaList">
                     <a href="https://www.youtube.com/@flowness5.144" class="socialMediaItem">
@@ -49,6 +51,7 @@
                     </a>
                 </div>
             </div>
+
             <div class="section">
                 <div class="sectionTitle">
                     <h2><span class="orangeTxt">BIO</span>GRAPHIE</h2>
@@ -60,7 +63,7 @@
                     </p>
                     <p>
                         <b>
-                            <ul id="memberList">
+                            <ul class="undecoratedList">
                                 <li>
                                     Tiana (Chant)
                                 </li>
@@ -88,13 +91,58 @@
                     </p>
                 </div>
             </div>
+
             <hr class="sectionHR">
+
             <div class="section">
                 <div class="block">
+                    <p id="pressQuote">
+                        <b>
+                            « FLOWNESS, c'est de la musique, SOUL, FUNK, BLUES qui se danse, se chante et sur laquelle
+                            les mains claquent et les corps bougent ! »
+                        </b>
+                    </p>
 
+                    <div class="carousel carousel--translate" id="pressCarousel">
+                        <div id="pressCarouselActivatorList"></div>
+                        <div>
+                            <div id="pressCtrlBackward" class="carousel__control carousel__control--backward"></div>
+                            <div id="pressCtrlForward" class="carousel__control carousel__control--forward"></div>
+                        </div>
+                        <div id="pressCarouselSlideList" class="carousel__track">
+                        </div>
+                        <div id="pressCarouselIndicatorList" class="carousel__indicators">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <hr class="sectionHR">
+
+            <div class="section">
+
+                <div class="sectionTitle">
+                    <h2><span class="orangeTxt">PRESENTATIONS</span> PASSÉES</h2>
+                </div>
+
+                <div class="block">
+                    <ul class="undecoratedList">
+                        <li>
+                            20/04/2018 • L'ÉPICURIEN - Trigny (51)
+                        </li>
+                        <li>
+                            21/06/2018 • Fête de la Musique - QUARTIER LIBRE - Reims (51)
+                        </li>
+                        <li>
+                            06/10/2018 • THÉÂTRE LE PETIT BOUFFON - Villeneuve Saint-Germain / Soissons (02)
+                        </li>
+                    </ul>
                 </div>
             </div>
+
         </div>
+        <script src="js/script.js"></script>
     </body>
 
 </html>

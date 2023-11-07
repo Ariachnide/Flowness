@@ -159,36 +159,40 @@ h1 {
 	margin: 30px auto;
 }
 
-@media screen and (max-width: 489px) {
+#plannedDatesElement {
+	display: none;
+}
+
+@media screen and (max-width: 414px) {
 	#mainSubtitle {
-		top: 70vh;
+		top: 65vh;
 		font-size: 0.6em;
 	}
 
 	h1 {
-		top: 75vh;
+		top: 70vh;
 		font-size: 2em;
 	}
 
 	#secondSubtitle {
-		top: 80vh;
+		top: 75vh;
 		font-size: 1.3em;
 	}
 }
 
-@media screen and (min-width: 490px) and (max-width: 799px) {
+@media screen and (min-width: 415px) and (max-width: 767px) {
 	#mainSubtitle {
-		top: 70vh;
-		font-size: 1em;
+		top: 60vh;
+		font-size: 0.9em;
 	}
 
 	h1 {
-		top: 75vh;
+		top: 65vh;
 		font-size: 2.5em;
 	}
 
 	#secondSubtitle {
-		top: 80vh;
+		top: 70vh;
 		font-size: 1.5em;
 	}
 
@@ -197,7 +201,7 @@ h1 {
 	}
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 768px) and (max-width: 1280px) {
 	#mainSubtitle {
 		top: 60vh;
 		font-size: 1.2em;
@@ -214,4 +218,8 @@ h1 {
 		font-size: 1.7em;
 		font-weight: 500;
 	}
+}
+
+@media screen and (min-width: 1281px) {
+
 }

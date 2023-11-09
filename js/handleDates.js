@@ -16,14 +16,15 @@ window.addEventListener("load", () => {
     fetch("./js/dates.json")
         .then((res) => res.json())
         .then((json) => {
-            json.items.forEach((d, i) => {
+            json.items.forEach((d) => {
                 const el = document.createElement("li");
+                el.classList.add("date-item");
                 if (d.date === "...") {
                     el.innerHTML = "... ... ...";
                     pastDateList.appendChild(el);
                     return;
                 }
-                el.innerHTML = d.date + " • " + d.place;
+                el.innerHTML = `<b>${d.date}</b> • ${d.place}`;
 
                 if (isDatePast(d.date.split("/"))) {
                     pastDateList.appendChild(el);

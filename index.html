@@ -13,18 +13,36 @@
     </head>
 
     <body>
-        <nav class="navbarContainer">
-            <div class="navbarSubContainer">
-                <input type="checkbox" name="burger menu" id="burgerMenuInput">
+
+        <nav class="navbarContainer" id="navbarContainer">
+            <div id="navbarSubContainer">
+                <input type="checkbox" name="burger menu" class="control-burger" id="burgerMenuInput">
                 <div class="hamburger-lines">
                     <span class="line line1"></span>
                     <span class="line line2"></span>
                     <span class="line line3"></span>
                 </div>
-                <ul class="menu-items">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                <ul class="menu-items control-burger">
+                    <li class="control-burger">
+                        <span class="menu-txt" id="scrollHome">
+                            Accueil
+                        </span>
+                    </li>
+                    <li class="control-burger">
+                        <span class="menu-txt" id="scrollBiographie">
+                            Biographie
+                        </span>
+                    </li>
+                    <li class="control-burger">
+                        <span class="menu-txt" id="scrollDates">
+                            Dates
+                        </span>
+                    </li>
+                    <li class="control-burger">
+                        <span class="menu-txt" id="scrollContact">
+                            Contact
+                        </span>
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -37,7 +55,7 @@
             <h1>F L O W N E S S</h1>
             <p id="secondSubtitle">Modern Soul Groovy Sound</p>
         </header>
-        <div class="mainContainer">
+        <div id="mainContainer">
 
             <div class="section">
                 <div class="socialMediaList">
@@ -54,7 +72,7 @@
                 </div>
             </div>
 
-            <div class="section">
+            <div class="section" id="biographie">
                 <div class="sectionTitle">
                     <h2><span class="orangeTxt">BIO</span>GRAPHIE</h2>
                 </div>
@@ -126,8 +144,7 @@
 
             <hr class="sectionHR">
 
-            <div class="section">
-
+            <div class="section" id="dates">
                 <div class="sectionTitle">
                     <h2><span class="orangeTxt">PRESENTATIONS</span> PASSÉES</h2>
                 </div>
@@ -168,8 +185,7 @@
 
             <hr class="sectionHR">
 
-            <div class="section">
-
+            <div class="section" id="contact">
                 <div class="sectionTitle">
                     <h2><span class="orangeTxt">BIENTÔT</span> AVEC VOUS ?</h2>
                 </div>
@@ -180,10 +196,26 @@
                     <p>Nous avons enregistré nos compositions dans un répertoire qui s'étoffe toujours un peu plus afin
                         de pouvoir candidater auprès des scènes de festivals ou de tremplins régionaux.</p>
                     <p>N'hésitez pas à nous contacter !</p>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="emailInput"><b>Adresse e-mail :</b></label>
+                            <input type="email" class="form-control" id="emailInput"
+                                placeholder="votre-adresse@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="txtInput"><b>Votre message :</b></label>
+                            <textarea class="form-control" id="txtInput" rows="5"></textarea>
+                        </div>
+                    </form>
                 </div>
+
             </div>
 
+            <div id="goTop" class="hidden">
+                <img src="./ressources/up-chevron.svg">
+            </div>
         </div>
+
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
             integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
             crossorigin="anonymous"></script>
@@ -195,6 +227,8 @@
             crossorigin="anonymous"></script>
         <script src="js/fillCarousel.js"></script>
         <script src="js/handleDates.js"></script>
+        <script src="js/script.js"></script>
+
     </body>
 
 </html>

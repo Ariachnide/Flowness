@@ -54,14 +54,13 @@
                 </ul>
             </div>
         </nav>
-        <header>
-            <video id="backgroundVideo" autoplay loop muted>
-                <source src="./ressources/frontvideo.mp4" type="video/mp4">
-            </video>
+        <header id="header">
             <div class="videoShadowLayer"></div>
-            <p id="mainSubtitle"><b>W E L O V E W H A T W E D O A N D W E H O P E I T S H O W S</b></p>
-            <h1>F L O W N E S S</h1>
-            <p id="secondSubtitle">Modern Soul Groovy Sound</p>
+            <p id="subtitleWLWWD" class="headlines"><b>W E L O V E W H A T W E D O A N D W E H O P E I T S H O W S</b></p>
+            <h1>
+                <span>Flowness</span>
+            </h1>
+            <p id="subtitleMSGS"></p>
         </header>
         <div id="mainContainer">
 
@@ -88,7 +87,7 @@
 
                 <div class="section-inline">
 
-                    <div class="block">
+                    <div class="block" id="block1">
                         <p>
                             <b>FLOWNESS</b>, terme inventé, dont le radical flow signifie «couler» en anglais, est un projet
                             musical né, fin 2016, de la rencontre entre cinq rémois passionné(e)s de musique.
@@ -125,7 +124,7 @@
 
                     <hr class="sectionHR" id="smallSizeHR">
 
-                    <div class="block">
+                    <div class="block" id="block2">
                         <p id="pressQuote">
                             <b>
                                 « FLOWNESS, c'est de la musique, SOUL, FUNK, BLUES qui se danse, se chante et sur laquelle
@@ -159,7 +158,7 @@
                     <h2><span class="orangeTxt">PRESENTATIONS</span> PASSÉES</h2>
                 </div>
 
-                <div class="block">
+                <div class="block" id="block3">
                     <ul class="undecoratedList" id="pastDateList"></ul>
                     <div id="plannedDatesElement">
                         <div class="sectionTitle titleInBlock">
@@ -172,7 +171,7 @@
 
             <hr class="sectionHR">
 
-            <div class="section">
+            <div class="section" id="illustrations">
                 <div class="illustrationBlock">
                     <div id="illustrationCarousel" class="carousel slide" data-ride="carousel">
                         <ol class="carousel-indicators" id="illustrationCarouselIndicatorList">
@@ -198,7 +197,7 @@
                     <h2><span class="orangeTxt">BIENTÔT</span><br class="smallSizeBR"> AVEC VOUS ?</h2>
                 </div>
 
-                <div class="block">
+                <div class="block" id="block4">
                     <p>Nous souhaitons faire davantage de concerts afin de pouvoir rencontrer un public avide d'une
                         musique différente.</p>
                     <p>Nous avons enregistré nos compositions dans un répertoire qui s'étoffe toujours un peu plus afin
@@ -233,8 +232,7 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
             integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
             crossorigin="anonymous"></script>
-        <script src="js/fillCarousel.js"></script>
-        <script src="js/handleDates.js"></script>
+        <script type="module" src="js/firebaseHandler.js"></script>
         <script src="js/script.js"></script>
 
     </body>

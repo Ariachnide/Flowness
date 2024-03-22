@@ -2,12 +2,22 @@
 	--navbarHeight: max(8vh, 45px);
 	--burgerBoxSize: 30px;
 	--txtColor: #fff;
-	--txtOrange: orangered;
+	--txtOrange: #f39200;
 	--txtSubtitleColor: #bbb;
 	--backgroundColor1: #333;
 	--backgroundColor2: #777;
 	--backgroundColorShadow: #aaa;
 	--socialMediaSize: 50px;
+}
+
+@font-face {
+	font-family: "Bodoni 72";
+	src: url("../ressources/fonts/BodoniSvtyTwoITCTT-Book-01.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: "Bebas Kai";
+	src: url("../ressources/fonts/BebasKai.otf") format("opentype");
 }
 
 * {
@@ -18,6 +28,11 @@
 
 body {
 	background: var(--backgroundColor1);
+	font-family: "Bodoni 72", sans-serif;
+}
+
+.headlines, h2 {
+	font-family: "Bebas Kai", sans-serif;
 }
 
 .nojs-warn {
@@ -33,7 +48,7 @@ header {
 }
 
 .videoShadowLayer {
-	background: linear-gradient(to bottom, #00000000, #000000ff);
+	background: linear-gradient(to bottom, #00000000, #222222ff);
 	height: calc(100vh - var(--navbarHeight));
 	width: 100%;
 	position: absolute;
@@ -56,23 +71,34 @@ header {
 }
 
 h1,
-#mainSubtitle,
-#secondSubtitle {
+#subtitleWLWWD,
+#subtitleMSGS {
 	display: block;
 	position: relative;
 	text-align: center;
 }
 
-#mainSubtitle {
+#subtitleWLWWD {
 	color: var(--txtSubtitleColor);
 }
 
 h1 {
-	color: var(--txtColor);
+	background: url("../ressources/logo_flowness.png") no-repeat center;
+	background-size: contain;
+	margin: 0 auto;
 }
 
-#secondSubtitle {
-	color: var(--txtOrange);
+h1 span {
+	display: block;
+	width: 0;
+	height: 0;
+	overflow: hidden;
+}
+
+#subtitleMSGS {
+	background: url("../ressources/modern_soul_groovy_sound.png") no-repeat center;
+	background-size: contain;
+	margin: 0 auto;
 }
 
 #mainContainer {
@@ -244,53 +270,62 @@ h1 {
 	display: none;
 }
 
+h1 {
+	width: 100%;
+	height: 140px;
+	top: 35vh;
+}
+
+#subtitleMSGS {
+	width: 100%;
+	height: 60px;
+	top: 40vh;
+}
+
+#subtitleWLWWD {
+	font-size: 4.5vw;
+	top: 85vh;
+}
+
 @media screen and (max-width: 350px) {
 	.smallSizeBR {
 		display: inline;
 	}
 }
 
-@media screen and (max-width: 414px) {
-	#mainSubtitle {
-		top: 65vh;
-		font-size: 0.6em;
-	}
-
+@media screen and (max-width: 767px) {
 	h1 {
-		top: 70vh;
-		font-size: 2em;
+		width: 95%;
+		height: 100px;
+		top: 45vh;
+	}
+	
+	#subtitleMSGS {
+		width: 90%;
+		height: 35px;
+		top: 50vh;
 	}
 
-	#secondSubtitle {
-		top: 75vh;
-		font-size: 1.3em;
+	#subtitleWLWWD {
+		font-size: 4.5vw;
+		top: 90vh;
 	}
 }
 
 @media screen and (min-width: 415px) and (max-width: 767px) {
-	#mainSubtitle {
-		top: 60vh;
-		font-size: 0.9em;
-	}
-
-	h1 {
-		top: 65vh;
-		font-size: 2.5em;
-	}
-
-	#secondSubtitle {
-		top: 70vh;
-		font-size: 1.5em;
-	}
-
 	:root {
 		--socialMediaSize: 60px;
 	}
 
-	.socialMediaList, .section, #illustrationCarousel, .sectionHR {
-		max-width: 525px;
+	.socialMediaList, .section, #illustrationCarousel {
+		max-width: 800px;
 		margin-left: auto;
 		margin-right: auto;
+	}
+
+	.sectionHR {
+		margin-left: 15px;
+		margin-right: 15px;
 	}
 
 	#contact {
@@ -298,52 +333,83 @@ h1 {
 	}
 }
 
-@media screen and (min-width: 768px) {
-	#mainSubtitle {
-		top: 60vh;
-		font-size: 1.2em;
-	}
-
+@media screen and (min-width: 768px) and (max-width: 1024px) {
 	h1 {
-		top: 65vh;
-		font-size: 3em;
-		font-weight: 700;
+		width: 100%;
+		height: 120px;
+		top: 50vh;
+	}
+	
+	#subtitleMSGS {
+		width: 100%;
+		height: 50px;
+		top: 55vh;
 	}
 
-	#secondSubtitle {
-		top: 70vh;
-		font-size: 1.7em;
-		font-weight: 500;
+	#subtitleWLWWD {
+		font-size: 4.5vw;
+		top: 90vh;
+	}
+
+	.socialMediaList, .section, #illustrationCarousel {
+		max-width: 800px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	
+	.sectionHR {
+		margin-left: 15px;
+		margin-right: 15px;
 	}
 }
 
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-	.socialMediaList, .section, #illustrationCarousel, .sectionHR {
-		max-width: 525px;
-		margin-left: auto;
-		margin-right: auto;
+@media screen and (min-width: 1025px) and (max-width: 1366px) {
+	h1 {
+		width: 100%;
+		height: 140px;
+		top: 40vh;
+	}
+	
+	#subtitleMSGS {
+		width: 100%;
+		height: 60px;
+		top: 45vh;
+	}
+
+	#subtitleWLWWD {
+		font-size: 4.5vw;
+		top: 90vh;
+	}
+
+	#block1, #block2, #block3, #block4 {
+		font-size: 20px;
+	}
+
+	h2 {
+		font-size: 40px;
 	}
 }
 
 @media screen and (min-width: 1025px) {
 	.socialMediaList {
-		max-width: 700px;
+		max-width: 800px;
 		margin-left: auto;
 		margin-right: auto;
 	}
 
 	#illustrationCarousel {
-		max-width: 600px;
+		max-width: 1000px;
 		margin-left: auto;
 		margin-right: auto;
 	}
 
-	#biographie {
-		max-width: 990px;
+	#dates, #contact {
+		max-width: 1650px;
 	}
 
-	#biographie .block {
-		width: 480px;
+	.section-inline .block {
+		width: 48%;
+		max-width: 900px;
 	}
 
 	#biographie:first-child {
@@ -355,7 +421,7 @@ h1 {
 	}
 	
 	.sectionHR {
-		max-width: 1100px;
+		max-width: 1650px;
 		margin: 45px 30px;
 	}
 
@@ -369,22 +435,29 @@ h1 {
 		display: none;
 	}
 
+	#biographie .block {
+		margin: 0;
+	}
+
 	#biographie {
 		margin-left: auto;
 		margin-right: auto;
 	}
 
-	#contact, #dates {
-		max-width: 700px;
+	#biographie, #contact, #dates {
+		max-width: 1300px;
 		margin-left: auto;
 		margin-right: auto;
 	}
 }
 
-@media screen and (min-width: 1160px) {
-	.sectionHR {
-		margin-left: auto;
-		margin-right: auto;
+@media screen and (min-width: 1367px) {
+	#block1, #block2, #block3, #block4 {
+		font-size: 24px;
+	}
+
+	h2 {
+		font-size: 48px;
 	}
 }
 
@@ -393,5 +466,28 @@ h1 {
 		margin-left: auto;
 		margin-right: auto;
 		max-width: 1920px;
+	}
+
+	#subtitleWLWWD {
+		font-size: 86px;
+	}
+}
+
+@media only screen and (max-height: 799px) and (orientation: landscape) {
+	h1 {
+		width: 100%;
+		height: 80px;
+		top: 35vh;
+	}
+	
+	#subtitleMSGS {
+		width: 100%;
+		height: 30px;
+		top: 40vh;
+	}
+
+	#subtitleWLWWD {
+		font-size: 3.15vw;
+		top: 90vh;
 	}
 }

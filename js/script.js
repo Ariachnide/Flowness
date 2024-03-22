@@ -30,7 +30,6 @@ window.addEventListener("load", () => {
 	});
 
 	document.getElementById("scrollDates").addEventListener("click", () => {
-		console.log(typeof window.screen.width)
 		const t =
 			window.screen.width < 769
 				? document.getElementById("dates").offsetTop - 52

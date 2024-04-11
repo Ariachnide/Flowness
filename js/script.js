@@ -18,10 +18,12 @@ window.addEventListener("load", () => {
 		.getElementById("scrollHome")
 		.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
 
+	const headerOffset = 80;
+
 	document.getElementById("scrollBiographie").addEventListener("click", () => {
 		const t =
 			window.screen.width < 769
-				? document.getElementById("biographie").offsetTop - 52
+				? document.getElementById("biographie").offsetTop - headerOffset
 				: document.getElementById("biographie").offsetTop;
 		window.scrollTo({
 			top: t,
@@ -32,8 +34,19 @@ window.addEventListener("load", () => {
 	document.getElementById("scrollDates").addEventListener("click", () => {
 		const t =
 			window.screen.width < 769
-				? document.getElementById("dates").offsetTop - 52
+				? document.getElementById("dates").offsetTop - headerOffset
 				: document.getElementById("dates").offsetTop;
+		window.scrollTo({
+			top: t,
+			behavior: "smooth",
+		});
+	});
+
+	document.getElementById("scrollGroup").addEventListener("click", () => {
+		const t =
+			window.screen.width < 769
+				? document.getElementById("group").offsetTop - headerOffset
+				: document.getElementById("group").offsetTop;
 		window.scrollTo({
 			top: t,
 			behavior: "smooth",
@@ -43,7 +56,7 @@ window.addEventListener("load", () => {
 	document.getElementById("scrollContact").addEventListener("click", () => {
         const t =
 			window.screen.width < 769
-				? document.getElementById("contact").offsetTop - 52
+				? document.getElementById("contact").offsetTop - headerOffset
 				: document.getElementById("contact").offsetTop;
 		window.scrollTo({
 			top: t,

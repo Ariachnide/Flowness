@@ -166,7 +166,7 @@ h1 span {
 	margin-right: 15px;
 }
 
-.illustrationBlock {
+.illustrationBlock, .groupBlock {
 	margin: 0 15px;
 }
 
@@ -317,7 +317,7 @@ h1 {
 		--socialMediaSize: 60px;
 	}
 
-	.socialMediaList, .section, #illustrationCarousel {
+	.socialMediaList, .section, #illustrationCarousel, #groupCarousel {
 		max-width: 800px;
 		margin-left: auto;
 		margin-right: auto;
@@ -351,7 +351,7 @@ h1 {
 		top: 90vh;
 	}
 
-	.socialMediaList, .section, #illustrationCarousel {
+	.socialMediaList, .section, #illustrationCarousel, #groupCarousel {
 		max-width: 800px;
 		margin-left: auto;
 		margin-right: auto;
@@ -397,13 +397,13 @@ h1 {
 		margin-right: auto;
 	}
 
-	#illustrationCarousel {
+	#illustrationCarousel, #groupCarousel {
 		max-width: 1000px;
 		margin-left: auto;
 		margin-right: auto;
 	}
 
-	#dates, #contact {
+	#dates, #contact, #group {
 		max-width: 1650px;
 	}
 
@@ -444,7 +444,7 @@ h1 {
 		margin-right: auto;
 	}
 
-	#biographie, #contact, #dates {
+	#biographie, #contact, #dates, #group {
 		max-width: 1300px;
 		margin-left: auto;
 		margin-right: auto;

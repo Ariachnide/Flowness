@@ -106,6 +106,44 @@ window.addEventListener("load", () => {
             });
         });
     
+    getDocs(collection(db, "GroupPics"))
+        .then((res) => {
+            const carId = "groupCarousel";
+            const indicatorList = document.getElementById("groupCarouselIndicatorList");
+            const slideList = document.getElementById("groupCarouselSlideList");
+
+            let i = 0;
+            res.forEach((doc) => {
+                const data = doc.data();
+                if (!data.visibility) return;
+
+                getDownloadURL(ref(storage, data.link)).then((dlRef) => {
+                    const indic = document.createElement("li");
+                    indic.dataset.target = "#" + carId;
+                    indic.dataset.slideTo = i;
+                    indicatorList.appendChild(indic);
+    
+                    const slideItem = document.createElement("div");
+                    slideItem.classList.add("carousel-item");
+                    slideList.appendChild(slideItem);
+
+                    const slideImg = document.createElement("img");
+                    slideImg.classList.add("d-block", "w-100");
+                    slideImg.alt = data.alt;
+                    slideImg.src = dlRef;
+
+                    slideItem.appendChild(slideImg);
+
+                    if (i === 0) {
+                        indic.classList.add("active");
+                        slideItem.classList.add("active");
+                    }
+                    i++;
+                });
+
+            });
+        });
+    
     getDocs(collection(db, "PressPics"))
         .then((res) => {
             const carId = "pressCarousel";

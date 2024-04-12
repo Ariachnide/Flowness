@@ -1,4 +1,11 @@
 window.addEventListener("load", () => {
+	setTimeout(function() {
+		document.getElementById("siteVeil").style.opacity = 0;
+		setTimeout(function() {
+			document.getElementById("siteVeil").remove();
+		}, 1000);
+	}, 750);
+
 	document.getElementById("goTop").addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
 
 	document.body.addEventListener("click", (e) => {

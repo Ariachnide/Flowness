@@ -471,6 +471,12 @@ h1 {
 	}
 }
 
+@media screen and (min-width: 1710px) {
+	.sectionHR {
+		margin: 45px auto;
+	}
+}
+
 @media screen and (min-width: 1920px) {
 	#mainContainer {
 		margin-left: auto;

@@ -1,11 +1,11 @@
 :root {
 	--navbarHeight: max(8vh, 45px);
 	--burgerBoxSize: 30px;
-	--txtColor: #fff;
+	--txtColor: #000;
 	--txtOrange: #f39200;
 	--txtSubtitleColor: #bbb;
 	--backgroundColor1: #333;
-	--backgroundColor2: #777;
+	--backgroundColor2: #ccc;
 	--backgroundColorShadow: #aaa;
 	--socialMediaSize: 50px;
 }
@@ -27,7 +27,6 @@
 }
 
 body {
-	background: var(--backgroundColor1);
 	font-family: "Bodoni 72", sans-serif;
 }
 
@@ -59,7 +58,7 @@ header {
 }
 
 .videoShadowLayer {
-	background: linear-gradient(to bottom, #00000000, #222222ff);
+	background: linear-gradient(to bottom, #ffffff00, #ffffff66);
 	height: calc(100vh - var(--navbarHeight));
 	width: 100%;
 	position: absolute;

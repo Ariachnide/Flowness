@@ -201,6 +201,19 @@ window.addEventListener("load", () => {
         
                 videoElement.appendChild(sourceElement);
                 document.getElementById("header").appendChild(videoElement);
-            })
-        })
+            });
+        });
+    
+    getDocs(collection(db, "BackgroundPictures"))
+        .then((res) => {
+            let pic;
+            res.forEach((doc) => {
+                pic = doc.data();
+            });
+            getDownloadURL(ref(storage, pic.link)).then((dlRef) => {
+                document.body.style.background = `url("${dlRef}") no-repeat center center fixed`;
+                document.body.style.backgroundSize = "cover";
+            });
+        }
+        );
 });

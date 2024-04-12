@@ -9,7 +9,7 @@
 	width: 100%;
 	background: linear-gradient(
 		to left,
-		var(--backgroundColor1),
+		var(--backgroundColorShadow),
 		var(--backgroundColor2)
 	);
 	color: var(--txtColor);

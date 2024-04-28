@@ -243,15 +243,20 @@
                     <p>Nous avons enregistré nos compositions dans un répertoire qui s'étoffe toujours un peu plus afin
                         de pouvoir candidater auprès des scènes de festivals ou de tremplins régionaux.</p>
                     <p>N'hésitez pas à nous contacter !</p>
+                    <b><p id="contactMsgStatus" class=""></p></b>
                     <form id="contactForm">
                         <div class="form-group">
                             <label for="emailInput"><b>Adresse e-mail :</b></label>
                             <input type="email" class="form-control" id="emailInput"
-                                placeholder="votre-adresse@example.com">
+                                placeholder="votre-adresse@example.com" maxlength="255">
                         </div>
                         <div class="form-group">
                             <label for="txtInput"><b>Votre message :</b></label>
-                            <textarea class="form-control" id="txtInput" rows="5"></textarea>
+                            <textarea class="form-control" id="txtInput" rows="5" maxlength="500"></textarea>
+                        </div>
+
+                        <div class="contactButton" id="sendMsg">
+                            ENVOYER
                         </div>
                     </form>
                 </div>

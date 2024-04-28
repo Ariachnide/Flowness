@@ -297,6 +297,29 @@ h1 {
 	top: 85vh;
 }
 
+.contactButton {
+	background-color: #fff;
+	width: 80%;
+	max-width: 300px;
+	margin: 16px auto;
+	padding: 16px;
+	text-align: center;
+	transition: ease-out 1s;
+}
+
+.contactButton:hover {
+	cursor: pointer;
+}
+
+.contactButton:active {
+	background-color: orange;
+	transition: none;
+}
+
+.statusError {
+	color: red;
+}
+
 @media screen and (max-width: 350px) {
 	.smallSizeBR {
 		display: inline;

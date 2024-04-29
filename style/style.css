@@ -1,11 +1,11 @@
 :root {
 	--navbarHeight: max(8vh, 45px);
 	--burgerBoxSize: 30px;
-	--txtColor: #000;
+	--txtColor: #fff;
 	--txtOrange: #f39200;
 	--txtSubtitleColor: #bbb;
 	--backgroundColor1: #333;
-	--backgroundColor2: #ccc;
+	--backgroundColor2: rgba(52, 62, 201, 0.747);
 	--backgroundColorShadow: #aaa;
 	--socialMediaSize: 50px;
 }
@@ -90,6 +90,7 @@ h1,
 
 #subtitleWLWWD {
 	color: var(--txtSubtitleColor);
+	-webkit-text-stroke: 1px black;
 }
 
 h1 {

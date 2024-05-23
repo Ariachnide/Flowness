@@ -155,6 +155,16 @@ h1 span {
 	left: calc(var(--socialMediaSize) / 4);
 }
 
+.socialMediaContactList {
+	list-style-type: none;
+}
+
+.socialMediaContactItem {
+	display: flex;
+	align-items: left;
+	margin: 16px 0px 16px 20px;
+}
+
 .orangeTxt {
 	color: var(--txtOrange);
 }
@@ -298,27 +308,14 @@ h1 {
 	top: 85vh;
 }
 
-.contactButton {
-	background-color: #fff;
-	width: 80%;
-	max-width: 300px;
-	margin: 16px auto;
-	padding: 16px;
-	text-align: center;
-	transition: ease-out 1s;
+#block4 {
+	padding-top: 24px;
+	padding-bottom: 24px;
 }
 
-.contactButton:hover {
-	cursor: pointer;
-}
-
-.contactButton:active {
-	background-color: orange;
-	transition: none;
-}
-
-.statusError {
-	color: red;
+.socialMediaContactText {
+	margin-top: auto;
+	margin-bottom: auto;
 }
 
 @media screen and (max-width: 350px) {

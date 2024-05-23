@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
-import { getFirestore, getDocs, collection, doc, setDoc } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore.js";
+import { getFirestore, getDocs, collection } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore.js";
 import { getStorage, ref, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-storage.js";
 
 const firebaseConfig = {
@@ -27,15 +27,8 @@ function isDatePast(s) {
         : false;
 }
 
-function validateEmail(email) {
-    return email.match(
-      /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-    );
-};
-
 window.addEventListener("load", () => {
     const app = initializeApp(firebaseConfig);
-
 
     const pastDateList = document.getElementById("pastDateList");
     const plannedDatesElement = document.getElementById("plannedDatesElement");
@@ -222,52 +215,4 @@ window.addEventListener("load", () => {
             });
         }
         );
-    
-    let isContactOnCoolDown = false;
-    
-    document.getElementById("sendMsg").addEventListener("click", function() {
-        const msgStatus = document.getElementById("contactMsgStatus");
-        if (isContactOnCoolDown) {
-            msgStatus.textContent = "Vous venez d'envoyer un message, veuillez patienter quelques secondes avant d'en envoyer un nouveau";
-            msgStatus.classList.remove("statusError");
-            return;
-        }
-
-        const email = document.getElementById("emailInput").value;
-        if (!validateEmail(email) || email.length > 255) {
-            msgStatus.textContent = "Adresse email invalide";
-            msgStatus.classList.add("statusError");
-            return;
-        }
-
-        const msg = document.getElementById("txtInput").value;
-        if (msg.length < 10) {
-            msgStatus.textContent = "Votre message doit contenir au moins 10 caractères";
-            msgStatus.classList.add("statusError");
-            return;
-        } else if (msg.length > 500) {
-            msgStatus.textContent = "Votre message ne peut pas contenir plus de 500 caractères";
-            msgStatus.classList.add("statusError");
-            return;
-        }
-
-        const date = new Date(Date.now());
-        const pathSegment = date.toDateString() + " " + date.toLocaleTimeString("fr-FR") + " " + Math.random();
-
-        setDoc(doc(db, "Contact", pathSegment), {
-            email: email,
-            content: msg
-        }).then(() => {
-            msgStatus.textContent = "Merci pour votre message !";
-            msgStatus.classList.remove("statusError");
-            isContactOnCoolDown = true;
-            setTimeout(() => {
-                isContactOnCoolDown = false;
-            }, 30000);
-        }).catch(() => {
-            msgStatus.textContent = "Erreur lors de l'envoi du message... Veuillez nous excuser pour la gêne occasionnée et réessayer un peu plus tard.";
-            msgStatus.classList.add("statusError");
-            return;
-        });
-    });
 });

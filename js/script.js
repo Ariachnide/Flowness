@@ -60,6 +60,17 @@ window.addEventListener("load", () => {
 		});
 	});
 
+	document.getElementById("scrollMusic").addEventListener("click", () => {
+		const t =
+			window.screen.width < 769
+				? document.getElementById("musicTracks").offsetTop - headerOffset
+				: document.getElementById("musicTracks").offsetTop;
+		window.scrollTo({
+			top: t,
+			behavior: "smooth",
+		});
+	});
+
 	document.getElementById("scrollContact").addEventListener("click", () => {
         const t =
 			window.screen.width < 769

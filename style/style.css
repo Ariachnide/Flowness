@@ -155,10 +155,6 @@ h1 span {
 	left: calc(var(--socialMediaSize) / 4);
 }
 
-.socialMediaContactList {
-	list-style-type: none;
-}
-
 .socialMediaContactItem {
 	display: flex;
 	align-items: left;
@@ -313,6 +309,10 @@ h1 {
 	padding-bottom: 24px;
 }
 
+.trackTitle {
+	vertical-align: top;
+}
+
 .socialMediaContactText {
 	margin-top: auto;
 	margin-bottom: auto;
@@ -412,7 +412,7 @@ h1 {
 		top: 90vh;
 	}
 
-	#block1, #block2, #block3, #block4 {
+	#block1, #block2, #block3, #block4, #block5 {
 		font-size: 20px;
 	}
 
@@ -434,7 +434,7 @@ h1 {
 		margin-right: auto;
 	}
 
-	#dates, #contact, #group {
+	#dates, #contact, #musicTracks, #group {
 		max-width: 1650px;
 	}
 
@@ -475,7 +475,7 @@ h1 {
 		margin-right: auto;
 	}
 
-	#biographie, #contact, #dates, #group {
+	#biographie, #contact, #dates, #musicTracks, #group {
 		max-width: 1300px;
 		margin-left: auto;
 		margin-right: auto;
@@ -483,7 +483,7 @@ h1 {
 }
 
 @media screen and (min-width: 1367px) {
-	#block1, #block2, #block3, #block4 {
+	#block1, #block2, #block3, #block4, #block5 {
 		font-size: 24px;
 	}
 

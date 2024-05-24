@@ -27,6 +27,18 @@ function isDatePast(s) {
         : false;
 }
 
+function getMusicExtensionType(track) {
+    let s = "";
+    for (let i = track.length - 1; i >= 0; i--) {
+        if (track[i] == ".") {
+            break;
+        } else {
+            s += track[i];
+        }
+    }
+    return s.split("").reverse().join("");
+}
+
 window.addEventListener("load", () => {
     const app = initializeApp(firebaseConfig);
 
@@ -142,6 +154,35 @@ window.addEventListener("load", () => {
 
             });
         });
+
+    getDocs(collection(db, "MusicTracks"))
+        .then((res) => {
+            const trackList = document.getElementById("musicTrackList");
+
+            res.forEach((doc) => {
+                const data = doc.data();
+                if (!data.visibility) return;
+
+                getDownloadURL(ref(storage, data.link)).then((dlRef) => {
+                    const indic = document.createElement("li");
+                    const trackTitle = document.createElement("span");
+                    trackTitle.classList.add("trackTitle");
+                    trackTitle.innerHTML = `${data.title} • `;
+
+                    const audioElement = document.createElement("audio");
+                    audioElement.controls = true;
+                    audioElement.innerHTML = "Your browser does not support the audio element.";
+                    const sourceElement = document.createElement("source");
+                    sourceElement.src = dlRef;
+                    sourceElement.type = `audio/${getMusicExtensionType(data.link)}`;
+                    
+                    audioElement.appendChild(sourceElement);
+                    indic.appendChild(trackTitle);
+                    indic.appendChild(audioElement);
+                    trackList.appendChild(indic);
+                })
+            })
+        })
     
     getDocs(collection(db, "PressPics"))
         .then((res) => {

@@ -42,12 +42,12 @@ function getMusicExtensionType(track) {
 window.addEventListener("load", () => {
     const app = initializeApp(firebaseConfig);
 
-    const pastDateList = document.getElementById("pastDateList");
+    /* const pastDateList = document.getElementById("pastDateList");
     const plannedDatesElement = document.getElementById("plannedDatesElement");
     const plannedDateList = document.getElementById("plannedDateList");
-    let isPlannedDateListDisplayed = false;
+    let isPlannedDateListDisplayed = false; */
     const db = getFirestore();
-    getDocs(collection(db, "ShowDates"))
+    /* getDocs(collection(db, "ShowDates"))
         .then((res) => {
             const items = [];
             res.forEach(doc => items.push(doc.data()));
@@ -75,7 +75,7 @@ window.addEventListener("load", () => {
                     }
                 });
         }
-    )
+    ) */
 
     const storage = getStorage(app);
 

@@ -326,6 +326,20 @@ h1 {
 	margin-bottom: auto;
 }
 
+.uppercase {
+	text-transform: uppercase;
+}
+
+.ytLink {
+	text-decoration: none;
+	color: var(--txtColor);
+}
+
+.ytLink:hover {
+	text-decoration: none;
+	color: var(--txtOrange);
+}
+
 @media screen and (max-width: 350px) {
 	.smallSizeBR {
 		display: inline;

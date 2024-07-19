@@ -163,18 +163,18 @@ window.addEventListener("load", () => {
                 const data = doc.data();
                 if (!data.visibility) return;
 
-                getDownloadURL(ref(storage, data.link)).then((dlRef) => {
+                getDownloadURL(ref(storage, data.fslink)).then((dlRef) => {
                     const indic = document.createElement("li");
                     const trackTitle = document.createElement("span");
                     trackTitle.classList.add("trackTitle");
-                    trackTitle.innerHTML = `${data.title} • `;
+                    trackTitle.innerHTML = `<a href="${data.ytlink}" class="ytLink" target="_blank" rel="noopener noreferrer">${data.title}</a> • `;
 
                     const audioElement = document.createElement("audio");
                     audioElement.controls = true;
                     audioElement.innerHTML = "Your browser does not support the audio element.";
                     const sourceElement = document.createElement("source");
                     sourceElement.src = dlRef;
-                    sourceElement.type = `audio/${getMusicExtensionType(data.link)}`;
+                    sourceElement.type = `audio/${getMusicExtensionType(data.fslink)}`;
                     
                     audioElement.appendChild(sourceElement);
                     indic.appendChild(trackTitle);

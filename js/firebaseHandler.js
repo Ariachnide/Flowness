@@ -12,20 +12,20 @@ const firebaseConfig = {
     measurementId: "G-SZ7MPNJSMY"
 };
 
-const t = new Date();
-const currentDay = `${t.getMonth() + 1}/${t.getDate()}/${t.getFullYear()}`;
+// const t = new Date();
+// const currentDay = `${t.getMonth() + 1}/${t.getDate()}/${t.getFullYear()}`;
 
-function convertDateFormat(s) {
+/* function convertDateFormat(s) {
     const d = s.split("/");
     return `${d[1]}/${d[0]}/${d[2]}`;
-}
+} */
 
-function isDatePast(s) {
+/* function isDatePast(s) {
     const d = convertDateFormat(s);
     return (new Date(d).getTime() < new Date(currentDay).getTime())
         ? true
         : false;
-}
+} */
 
 function getMusicExtensionType(track) {
     let s = "";

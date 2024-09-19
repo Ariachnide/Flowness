@@ -340,6 +340,31 @@ h1 {
 	color: var(--txtOrange);
 }
 
+#legals {
+	font-size: medium;
+	color: var(--txtSubtitleColor);
+	text-align: center;
+}
+
+#legals a {
+	color: inherit;
+}
+
+#legalsTxt {
+	font-size: large;
+}
+
+#legalsTxt h3 {
+	margin-top: 32px;
+	margin-left: 0;
+	font-weight: bold;
+}
+
+#legalsTxt li {
+	list-style: none;
+	margin-left: 32px;
+}
+
 @media screen and (max-width: 350px) {
 	.smallSizeBR {
 		display: inline;
